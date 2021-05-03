@@ -1,0 +1,191 @@
+
+@keyframes wheelHueColor {
+  from, to { color: hsl(324, 70%, 45%); }
+  10%      { color: hsl(360, 65%, 45%); }
+  20%      { color: hsl( 36, 80%, 45%); }
+  30%      { color: hsl( 72, 75%, 35%); }
+  40%      { color: hsl(108, 65%, 35%); }
+  50%      { color: hsl(144, 75%, 35%); }
+  60%      { color: hsl(180, 75%, 35%); }
+  70%      { color: hsl(216, 60%, 45%); }
+  80%      { color: hsl(252, 65%, 50%); }
+  90%      { color: hsl(288, 60%, 40%); }
+}
+
+/* Header */
+
+	#header {
+		@include padding(5em, 5em, (0, 0, -2em, 0));
+		text-align: center;
+
+		h1 {
+			margin: 0 0 (_size(element-margin) * 0.125) 0;
+		}
+
+		p {
+			font-size: 1.25em;
+			letter-spacing: _font(letter-spacing);
+		}
+
+		&.alt {
+			@include padding(2em, 5em, (1em, 0, 0, 0));
+
+			h1 {
+				font-size: 3.25em;
+			}
+
+			> * {
+				@include vendor('transition', 'opacity 3s ease');
+				@include vendor('transition-delay', '0.5s');
+				opacity: 1;
+			}
+
+      /* subtle float effect on logo block */
+      @keyframes float {
+        0% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: translatey(0px);
+        }
+        50% {
+          box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+          transform: translatey(-24px);        }
+        100% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: translatey(0px);
+        }
+      }
+
+			.logo {
+        position: relative;
+        z-index: 5;
+				display: inline-block;
+				margin: 0 0 (_size(element-margin) * 0.75) 0;
+        background: #61045f; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #61045f, #aa076b); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #aa076b, #61045f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 160px;
+        box-shadow: 20px 5px 15px 0px rgba(255,0,0,0.6);
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+        overflow: hidden;
+				img {
+					display: block;
+					margin: 0 auto;
+          max-width: 160px;
+          height: auto;
+				}
+			}
+		}
+
+		@include breakpoint('<=large') {
+			@include padding(4em, 4em, (0, 0, -2em, 0));
+
+			&.alt {
+				@include padding(5em, 4em, (1em, 0, 0, 0));
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			@include padding(4em, 3em, (0, 0, -2em, 0));
+
+			&.alt {
+				@include padding(4em, 3em, (1em, 0, 0, 0));
+			}
+		}
+
+		@include breakpoint('<=small') {
+			@include padding(3em, 2em, (0, 0, -1em, 0));
+
+			p {
+				font-size: 1em;
+				letter-spacing: 0;
+
+				br {
+					display: none;
+				}
+			}
+
+			&.alt {
+				@include padding(3em, 2em, (1em, 0, 0, 0));
+
+				h1 {
+					font-size: 2.5em;
+				}
+			}
+		}
+
+		@include breakpoint('<=xsmall') {
+			@include padding(3em, 1.5em, (0, 0, -1em, 0));
+
+			&.alt {
+				@include padding(3em, 1.5em, (1em, 0, 0, 0));
+			}
+		}
+
+		@include breakpoint('<=xxsmall') {
+			@include padding(2.5em, 1em, (0, 0, -1em, 0));
+
+			&.alt {
+				@include padding(2.5em, 1em, (1em, 0, 0, 0));
+			}
+		}
+
+		body.is-preload & {
+			&.alt {
+				> * {
+					opacity: 0;
+				}
+
+				.logo {
+					@include vendor('transform', 'scale(0.8) rotate(-30deg)');
+				}
+			}
+		}
+
+
+  }
+
+
+  #arcana {
+    position: relative;
+    z-index: 1;
+    .bitOfMagick {
+      z-index: 5;
+      background-image: url(/assets/images/fiberoptics.png);
+      background-size:contain;
+      background-repeat: no-repeat;
+      height: 375px;
+      width: 1000px;
+      background-clip: border-box;
+      animation: wheelHueColor 10s infinite;
+      position: absolute;
+      top: -18vh;
+      left: -7vw;
+
+    }
+
+    blockquote.arcana {
+
+      position: relative;
+      right: 0;
+      z-index: 12;
+
+      border-left: none;
+      color: rgb(242, 235, 199);
+      .quote {
+        font-size: 36px;
+        line-height: 1.15em;
+        margin-bottom: 16px;
+        width: 90%;
+        .emphasis {
+          font-weight: bold;
+          color: rgb(186, 90, 128);
+        }
+      }
+      .citation {
+        font-size: 14px;
+        text-align: right;
+        padding-right: 40px;
+      }
+    }
+  }

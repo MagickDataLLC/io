@@ -1,0 +1,108 @@
+
+
+/* Image */
+
+	.image {
+		border-radius: _size(border-radius);
+		border: 0;
+		display: inline-block;
+		position: relative;
+
+		img {
+			border-radius: _size(border-radius);
+			display: block;
+		}
+
+    &.sketch {
+      background-color: transparent;
+      border-color: transparent !important;
+      margin-left: -8em !important;
+      margin-right: 4em !important;
+      img {
+        border-color: transparent !important;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+        transform: rotate(-10deg);
+      }
+    }
+
+		&.left,
+		&.right {
+			max-width: 40%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&.left {
+			float: left;
+			margin: 0 1.5em 1em 0;
+			top: 0.25em;
+		}
+
+		&.right {
+			float: right;
+			margin: 0 0 1em 1.5em;
+			top: 0.25em;
+		}
+
+		&.fit {
+			display: block;
+			margin: 0 0 _size(element-margin) 0;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&.main {
+			display: block;
+			margin: 0 0 (_size(element-margin) * 1.5) 0;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+  .showcase {
+    &.left,
+    &.right {
+        max-width: 40%;
+        img {
+          width: 100%;
+        }
+    }
+    &.right {
+      margin-right: -5em;
+      margin-left: 4em;
+      transform: rotate(16deg);
+
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(359deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .sigilPositioner {
+    position: relative;
+    opacity: 15%;
+    #sigil {
+      position: absolute;
+      top: -80px;
+      left: -10vw;
+      max-width: 35vw;
+      transform: rotate(-16deg);
+      animation: rotation 300s ease-in-out infinite;
+
+    }
+  }
+

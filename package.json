@@ -1,0 +1,36 @@
+{
+  "name": "io",
+  "version": "1.0.0",
+  "description": "Site content for magickdata.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently -k \"npm run dev\" \"npm run watch-css\"",
+    "dev": "lite-server",
+    "db": "json-server --watch db.json --port 3005",
+    "build-js": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js",
+    "lint": "lint jshint src/**/**.js",
+    "build-css": "node-sass --include-path scss scss/main.scss assets/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "test": "mocha test",
+    "pretest": "npm run lint",
+    "posttest": "echo the test has been run!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagickDataLLC/io.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/MagickDataLLC/io/issues"
+  },
+  "homepage": "https://github.com/MagickDataLLC/io#readme",
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "jshint": "^2.12.0",
+    "lite-server": "^2.6.1",
+    "mocha": "^8.3.2",
+    "node-sass": "^5.0.0",
+    "uglify-js": "^3.13.5"
+  }
+}

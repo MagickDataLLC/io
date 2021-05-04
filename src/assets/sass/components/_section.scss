@@ -7,6 +7,17 @@ section, article {
   &#team {
     background-color: rgba(#f2ddff,25%);
   }
+  &#prophecy {
+    background-color: rgba(9,13,49,1.0);
+    background-image: url(../../assets/images/bg_texture.png);
+    .citation {
+      text-align: center;
+      margin-top: -3em;
+      padding-bottom: 4em;
+      color: #fff;
+      font-size: 13px;
+    }
+  }
 }
 
 header {
@@ -56,17 +67,12 @@ header {
           &.icon {
             display: inline-block;
           }
-          &.category {
-            display: inline-block;
-            font-variant: small-caps;
-            font-size: .75em;
-            margin-left: 8px;
-          }
         }
       }
     }
   }
 }
+
 
 footer {
   &.major {

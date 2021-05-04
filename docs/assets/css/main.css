@@ -9,7 +9,7 @@ code, em, img, q, s,
 small, strong, sub, sup, tt, var, b,
 u, i, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, details,
+tfoot, thead, tr, th, td, details, figcaption,
 footer, header, menu, nav,
 section, time, mark {
   margin: 0;
@@ -20,7 +20,7 @@ section, time, mark {
   vertical-align: baseline;
 }
 
- details,
+ details, figcaption,
 footer, header, menu, nav, section {
   display: block;
 }
@@ -108,55 +108,13 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   width: 100%;
   margin-top: 4em;
 }
-#contact .prophecy {
-  background-image: url("../../assets/images/parchment.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 400px;
-  transform: rotate(-3deg);
-  margin-top: 4em;
-  position: relative;
-  z-index: 30;
-}
-#contact .prophecy blockquote.prophecyText {
-  border-left: none;
-  font-family: Georgia;
-  color: rgba(63, 0, 0, 0.9);
-  padding: 20px 72px 0px 60px;
-  font-size: 20px;
-  line-height: 30px;
-}
-#contact .prophecy blockquote.prophecyText:first-child:first-letter {
-  color: #903;
-  float: left;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 80px;
-  line-height: 40px;
-  padding-top: 12px;
-  padding-right: 8px;
-  padding-left: 3px;
-  font-style: normal;
-  transform: rotate(1.5deg);
-}
-#contact .prophecy .citation {
-  transform: rotate(3deg);
-  text-align: right;
-  margin-right: 48px;
-  font-size: 16px;
-  padding-top: 16px;
-}
 #contact .contactForm {
-  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 #contact .contactForm .row {
   padding-right: 1.5em;
-}
-#contact .contactForm header.minor h2, #contact .contactForm header.minor h4 {
-  color: #ba5a80;
-  font-weight: 700;
-  text-shadow: rgba(255, 255, 255, 0.25);
 }
 #contact .contactForm input, #contact .contactForm textarea {
   margin-top: 8px;
@@ -177,14 +135,6 @@ iframe.MCform {
   height: 900px;
   overflow: hidden;
   border-radius: 4px;
-}
-
-.strategy {
-  width: 80%;
-}
-.strategy img {
-  height: 300px;
-  margin: 0 auto;
 }
 
 /* Type */
@@ -364,7 +314,7 @@ hr {
 }
 
 .brandCallout {
-  color: blue;
+  color: purple;
 }
 
 /* Row */
@@ -380,6 +330,9 @@ hr {
 .row.gtr-uniform > * > :last-child {
   margin-bottom: 0;
 }
+.row > .col-3 {
+  width: 25%;
+}
 .row > .col-4 {
   width: 33.3333333333%;
 }
@@ -388,6 +341,9 @@ hr {
 }
 .row > .col-8 {
   width: 66.6666666667%;
+}
+.row > .col-9 {
+  width: 75%;
 }
 .row > .col-12 {
   width: 100%;
@@ -504,6 +460,12 @@ hr {
   }
   .row.gtr-uniform > * > :last-child {
     margin-bottom: 0;
+  }
+  .row > .col-4-small {
+    width: 33.3333333333%;
+  }
+  .row > .col-8-small {
+    width: 66.6666666667%;
   }
   .row > .col-12-small {
     width: 100%;
@@ -1011,17 +973,6 @@ input[type=radio]:focus + label:before {
   border-radius: 8px;
   display: block;
 }
-.image.sketch {
-  background-color: transparent;
-  border-color: transparent !important;
-  margin-left: -8em !important;
-  margin-right: 4em !important;
-}
-.image.sketch img {
-  border-color: transparent !important;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-  transform: rotate(-10deg);
-}
 .image.left, .image.right {
   max-width: 40%;
 }
@@ -1055,18 +1006,6 @@ input[type=radio]:focus + label:before {
   width: 100%;
 }
 
-.showcase.left, .showcase.right {
-  max-width: 40%;
-}
-.showcase.left img, .showcase.right img {
-  width: 100%;
-}
-.showcase.right {
-  margin-right: -5em;
-  margin-left: 4em;
-  transform: rotate(16deg);
-}
-
 @keyframes rotation {
   from {
     transform: rotate(359deg);
@@ -1082,19 +1021,55 @@ input[type=radio]:focus + label:before {
 .sigilPositioner #sigil, .sigilPositioner #sigil2 {
   position: absolute;
   top: 10px;
-  left: -5vw;
+  left: 3vw;
   max-width: 35vw;
   transform: rotate(-16deg);
-  animation: rotation 300s ease-in-out infinite;
+  animation: rotation 500s infinite;
   z-index: 15;
 }
 .sigilPositioner #sigil2 {
   top: 10px;
-  left: -4.5vw;
+  left: 2.5vw;
   transform: rotate(-13deg);
-  animation: rotation 300s ease-in-out infinite;
+  animation: rotation 500s infinite;
   filter: blur(4px);
   z-index: 8;
+}
+
+.serviceIntro {
+  position: relative;
+}
+.serviceIntro p {
+  font-size: 18px;
+  padding-right: 16px;
+}
+
+.serviceIcon {
+  transform: rotate(-6deg);
+  width: 30%;
+  position: relative;
+  top: -3em !important;
+}
+.serviceIcon.dataScience {
+  margin-bottom: -2em;
+  transform: rotate(-1deg);
+}
+.serviceIcon.infoArts {
+  margin-bottom: -2em;
+  transform: rotate(4deg);
+}
+
+h2.service {
+  font-size: 1em;
+  font-variant: small-caps;
+  font-weight: 700;
+  color: purple !important;
+  margin: 0;
+}
+
+h3.service {
+  font-size: 2em;
+  font-weight: 700;
 }
 
 /* List */
@@ -1115,6 +1090,9 @@ ul {
 ul li {
   padding-left: 0.5em;
 }
+ul.serviceList li {
+  font-size: 18px;
+}
 ul.serviceList li.subheading {
   font-weight: bold;
 }
@@ -1125,7 +1103,6 @@ ul.serviceList li:first-child {
 }
 ul.serviceCards {
   list-style-type: none;
-  background-color: #efefef;
   text-align: center;
 }
 ul.serviceCards li {
@@ -1134,7 +1111,7 @@ ul.serviceCards li {
   position: relative;
 }
 ul.serviceCards li img {
-  width: 28%;
+  width: 18%;
 }
 ul.serviceCards li.ideation {
   position: relative;
@@ -1326,6 +1303,17 @@ section.special {
 section#team {
   background-color: rgba(242, 221, 255, 0.25);
 }
+section#prophecy {
+  background-color: #090d31;
+  background-image: url(../../assets/images/bg_texture.png);
+}
+section#prophecy .citation {
+  text-align: center;
+  margin-top: -3em;
+  padding-bottom: 4em;
+  color: #fff;
+  font-size: 13px;
+}
 
 header.major {
   margin-bottom: 3em;
@@ -1355,23 +1343,6 @@ header.major.special {
 header.major.special h2:after {
   margin-left: auto;
   margin-right: auto;
-}
-header.major.minor h2.service {
-  margin-top: 28px;
-  border-top: 1px dashed #ccc;
-  padding-top: 28px;
-}
-header.major.minor h2.service span {
-  display: block;
-}
-header.major.minor h2.service span.icon {
-  display: inline-block;
-}
-header.major.minor h2.service span.category {
-  display: inline-block;
-  font-variant: small-caps;
-  font-size: 0.75em;
-  margin-left: 8px;
 }
 
 footer.major {
@@ -1771,43 +1742,32 @@ body.is-preload #header.alt .logo {
 }
 
 #arcana {
-  position: relative;
-  z-index: 1;
-}
-#arcana .bitOfMagick {
-  z-index: 5;
-  background-image: url("../../assets/images/fiberoptics.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 375px;
-  width: 1000px;
-  background-clip: border-box;
-  animation: wheelHueColor 10s infinite;
-  position: absolute;
-  top: -18vh;
-  left: -7vw;
+  text-align: center;
+  max-width: 700px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 #arcana blockquote.arcana {
-  position: relative;
-  right: 0;
-  z-index: 12;
   border-left: none;
   color: #f2ebc7;
+  max-width: 100%;
+  text-align: center !important;
+  padding: 0;
 }
 #arcana blockquote.arcana .quote {
   font-size: 36px;
   line-height: 1.15em;
   margin-bottom: 16px;
-  width: 90%;
 }
 #arcana blockquote.arcana .quote .emphasis {
   font-weight: bold;
   color: #ba5a80;
 }
 #arcana blockquote.arcana .citation {
-  font-size: 14px;
-  text-align: right;
-  padding-right: 40px;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
 }
 
 /* Nav */
@@ -2129,7 +2089,7 @@ body.is-preload #header.alt .logo {
   border-color: #dddddd;
 }
 #main > .main {
-  padding: 5em 5em 3em 5em;
+  padding: 3em 3em 1em 3em;
   border-top: solid 1px #dddddd;
 }
 #main > .main:first-child {
@@ -2212,9 +2172,11 @@ body.is-preload #header.alt .logo {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 5em 5em 3em 5em;
+  padding: 0 3em;
   width: calc(100% + 2em);
-  margin: 0 0 3em -2em;
+  margin: 0 0 3em 0;
+  margin-bottom: 0;
+  background-color: #080c2d;
 }
 #footer > * {
   width: calc(50% - 2em);
@@ -2244,9 +2206,6 @@ body.is-preload #header.alt .logo {
     margin-left: 0;
     margin-bottom: 3em;
   }
-  #footer .copyright {
-    text-align: left;
-  }
 }
 @media screen and (max-width: 736px) {
   #footer {
@@ -2262,6 +2221,26 @@ body.is-preload #header.alt .logo {
   #footer {
     padding: 2.5em 1em 0.5em 1em;
   }
+}
+
+dl.icons dd {
+  padding: 0;
+  display: inline-block;
+  margin-left: 1em;
+}
+dl.icons dd:first-child {
+  margin-left: 5.5em;
+}
+
+.copyright.full {
+  width: 100vw;
+  text-align: center;
+  background-color: #070a24;
+  font-size: 12px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  margin-bottom: 0;
+  border-top: 1px dotted rgba(255, 255, 255, 0.25);
 }
 
 /* Wrapper */

@@ -13,18 +13,6 @@
 			display: block;
 		}
 
-    &.sketch {
-      background-color: transparent;
-      border-color: transparent !important;
-      margin-left: -8em !important;
-      margin-right: 4em !important;
-      img {
-        border-color: transparent !important;
-        box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
-        transform: rotate(-10deg);
-      }
-    }
-
 		&.left,
 		&.right {
 			max-width: 40%;
@@ -67,22 +55,6 @@
 		}
 	}
 
-  .showcase {
-    &.left,
-    &.right {
-        max-width: 40%;
-        img {
-          width: 100%;
-        }
-    }
-    &.right {
-      margin-right: -5em;
-      margin-left: 4em;
-      transform: rotate(16deg);
-
-    }
-  }
-
   @keyframes rotation {
     from {
       transform: rotate(359deg);
@@ -98,20 +70,52 @@
     #sigil, #sigil2 {
       position: absolute;
       top: 10px;
-      left: -5vw;
+      left: 3vw;
       max-width: 35vw;
       transform: rotate(-16deg);
-      animation: rotation 300s ease-in-out infinite;
+      animation: rotation 500s infinite;
       z-index: 15;
 
     }
     #sigil2 {
       top: 10px;
-      left: -4.5vw;
+      left: 2.5vw;
       transform: rotate(-13deg);
-      animation: rotation 300s ease-in-out infinite;
+      animation: rotation 500s infinite;
       filter: blur(4px);
       z-index: 8;
     }
   }
 
+  .serviceIntro {
+    position: relative;
+    p {
+      font-size: 18px;
+      padding-right: 16px;
+    }
+  }
+  .serviceIcon {
+    transform: rotate(-6deg);
+    width: 30%;
+    position: relative;
+    top: -3em !important;
+    &.dataScience {
+      margin-bottom: -2em;
+      transform: rotate(-1deg);
+    }
+    &.infoArts {
+      margin-bottom: -2em;
+      transform: rotate(4deg);
+    }
+  }
+  h2.service {
+    font-size: 1em;
+    font-variant: small-caps;
+    font-weight: 700;
+    color: purple !important;
+    margin: 0;
+  }
+  h3.service {
+    font-size: 2em;
+    font-weight: 700;
+  }

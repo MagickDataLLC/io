@@ -23,6 +23,7 @@
 
     &.serviceList {
       li {
+        font-size: 18px;
         &.subheading {
           font-weight: bold;
         }
@@ -36,7 +37,7 @@
 
     &.serviceCards {
       list-style-type: none;
-      background-color: #efefef;
+      //background-color: #efefef;
       text-align: center;
       li {
         display: inline;
@@ -44,7 +45,7 @@
         position: relative;
 
         img {
-          width: 28%;
+          width: 18%;
         }
 
         &.ideation {

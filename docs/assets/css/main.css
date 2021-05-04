@@ -120,11 +120,10 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   }
 }
 #contact .contactForm .cta {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px;
   color: white;
   text-align: center;
-  width: 50%;
+  max-width: 75%;
   height: 120px;
   border-radius: 4px;
   padding-top: 20px;

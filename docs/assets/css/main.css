@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import 'fontawesome-all.min.css';
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
-@import 'https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;1,300&display=swap';
 html, body, div, span, object,
 iframe, h1, h2, h3, h4, p, blockquote,
 pre, a, big, cite,
@@ -444,6 +444,9 @@ hr {
   }
   .row.gtr-uniform > * > :last-child {
     margin-bottom: 0;
+  }
+  .row > .col-1-small {
+    width: 8.3333333333%;
   }
   .row > .col-4-small {
     width: 33.3333333333%;
@@ -1734,6 +1737,8 @@ body.is-preload #header.alt .logo {
   font-size: 36px;
   line-height: 1.15em;
   margin-bottom: 16px;
+  font-family: "Source Serif Pro", serif;
+  letter-spacing: 0.5px;
 }
 #arcana blockquote.arcana .quote .emphasis {
   font-weight: bold;

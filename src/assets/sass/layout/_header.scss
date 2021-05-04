@@ -153,7 +153,6 @@
     margin-right: 15%;
 
     blockquote.arcana {
-
       border-left: none;
       color: rgb(242, 235, 199);
       max-width: 100%;
@@ -163,6 +162,8 @@
         font-size: 36px;
         line-height: 1.15em;
         margin-bottom: 16px;
+        font-family: 'Source Serif Pro', serif;
+        letter-spacing: 0.5px;
         .emphasis {
           font-weight: bold;
           color: rgb(186, 90, 128);

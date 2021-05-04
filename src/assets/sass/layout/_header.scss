@@ -35,7 +35,7 @@
 			}
 
 			> * {
-				@include vendor('transition', 'opacity 3s ease');
+				@include vendor('transition', 'opacity 1s ease');
 				@include vendor('transition-delay', '0.5s');
 				opacity: 1;
 			}
@@ -48,7 +48,7 @@
         }
         50% {
           box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-          transform: translatey(-24px);        }
+          transform: translatey(-16px);        }
         100% {
           box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
           transform: translatey(0px);

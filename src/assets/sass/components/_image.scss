@@ -94,15 +94,24 @@
 
   .sigilPositioner {
     position: relative;
-    opacity: 15%;
-    #sigil {
+    opacity: 40%;
+    #sigil, #sigil2 {
       position: absolute;
-      top: -80px;
-      left: -10vw;
+      top: 10px;
+      left: -5vw;
       max-width: 35vw;
       transform: rotate(-16deg);
       animation: rotation 300s ease-in-out infinite;
+      z-index: 15;
 
+    }
+    #sigil2 {
+      top: 10px;
+      left: -4.5vw;
+      transform: rotate(-13deg);
+      animation: rotation 300s ease-in-out infinite;
+      filter: blur(4px);
+      z-index: 8;
     }
   }
 

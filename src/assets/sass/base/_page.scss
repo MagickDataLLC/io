@@ -50,41 +50,20 @@
 
   .contactForm {
     //background-color: darken(rgba(#2c056c,0.25),50%);
-    border-radius: 8px;
     padding-bottom: 1.5em;
     margin-bottom: 2em;
-
-    .row {
-      padding-right: 1.5em;
-    }
-    header.minor {
-      h2, h4 {
-        color: #ba5a80;
-        font-weight: 700;
-        text-shadow: rgba(#fff,0.25);
-      }
-    }
-    input, textarea {
-      margin-top: 8px;
-      margin-bottom: 16px;
-      border-radius: 2px;
-      margin-left: 0;
-      font-size: 16px;
-      &::placeholder {
-        color: #fff;
-        opacity: 0.8;
-      }
-    }
+    text-align: center;
+    border-radius: 4px;
   }
 }
 
 iframe.MCform {
   padding: 0;
   margin: 0;
-  width: 558px;
-  height: 900px;
+  width: 100%;
+  max-width: 558px;
+  height: 950px;
   overflow: hidden;
-  border-radius: 4px;
 }
 
 

@@ -66,6 +66,7 @@
 
   .sigilPositioner {
     position: relative;
+    z-index: 100;
     opacity: 40%;
     #sigil, #sigil2 {
       position: absolute;
@@ -75,6 +76,11 @@
       transform: rotate(-16deg);
       animation: rotation 500s infinite;
       z-index: 15;
+      @include breakpoint('<=medium') {
+        left: -10vw;
+        top: 0;
+        max-width: 30vw;
+      }
 
     }
     #sigil2 {
@@ -84,6 +90,10 @@
       animation: rotation 500s infinite;
       filter: blur(4px);
       z-index: 8;
+      @include breakpoint('<=medium') {
+        left: -9.5vw;
+        top: 0;
+      }
     }
   }
 
@@ -99,6 +109,10 @@
     width: 30%;
     position: relative;
     top: -3em !important;
+    &.ideation {
+      margin-bottom: -2em;
+      transform: rotate(-1deg);
+    }
     &.dataScience {
       margin-bottom: -2em;
       transform: rotate(-1deg);

@@ -62,23 +62,36 @@
   }
 
   .contactForm {
+    text-align: center;
+    position: relative;
     .cta {
+      position: relative;
+      z-index: 20;
       font-size: 16px;
       color: white;
       text-align: center;
-      max-width: 75%;
+      max-width: 50%;
       height: 120px;
-      border-radius: 4px;
+      border-radius: 8px;
       padding-top: 20px;
+      border: 1px solid #d155b8;
       // for shine & gradient effects to work
       position: relative;
       overflow: hidden;
       // for background color shift
-      background-image: (linear-gradient(270deg, #8e9ac2, #42579a));
+      background-image: (linear-gradient(270deg, #5068b8, #1b2f72));
       background-size: 400% 400%;
       animation: TransitioningBackground 10s ease infinite;
+      text-shadow: 0 -2px 1px rgba(#000,0.5);
       // to ease the button growth on hover
       transition: 0.6s;
+      @include breakpoint('<=medium') {
+        max-width: 100%;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 0;
+        vertical-align: center;
+      }
       h4 {
         font-size: 2rem;
         font-weight: 700;
@@ -96,7 +109,7 @@
         width: 60px;
         height: 100%;
         top: 0;
-        filter: blur(30px);
+        filter: blur(60px);
         transform: translateX(-100px) skewX(-15deg);
       }
         // psuedo-element shine animation right side
@@ -108,21 +121,22 @@
         width: 30px;
         height: 100%;
         top: 0;
-        filter: blur(5px);
+        filter: blur(25px);
         transform: translateX(-100px) skewX(-15deg);
       }
         // grow button and change background gradient on hover
       &:hover {
         background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
-        transform: scale(1.2);
+        transform: scale(1.1);
         cursor: pointer;
         pointer-events: auto;
+        border: 1px solid #7c1768;
 
         // psuedo-elements for right- and left-side shine animations
         &::before,
         &::after {
           transform: translateX(300px) skewX(-15deg);
-          transition: 0.7s;
+          transition: 0.5s;
         }
       }
     }

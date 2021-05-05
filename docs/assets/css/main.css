@@ -119,20 +119,37 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     background-position: 1% 0%;
   }
 }
+#contact .contactForm {
+  text-align: center;
+  position: relative;
+}
 #contact .contactForm .cta {
+  position: relative;
+  z-index: 20;
   font-size: 16px;
   color: white;
   text-align: center;
-  max-width: 75%;
+  max-width: 50%;
   height: 120px;
-  border-radius: 4px;
+  border-radius: 8px;
   padding-top: 20px;
+  border: 1px solid #d155b8;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(270deg, #8e9ac2, #42579a);
+  background-image: linear-gradient(270deg, #5068b8, #1b2f72);
   background-size: 400% 400%;
   animation: TransitioningBackground 10s ease infinite;
+  text-shadow: 0 -2px 1px rgba(0, 0, 0, 0.5);
   transition: 0.6s;
+}
+@media screen and (max-width: 980px) {
+  #contact .contactForm .cta {
+    max-width: 100%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 0;
+    vertical-align: center;
+  }
 }
 #contact .contactForm .cta h4 {
   font-size: 2rem;
@@ -150,7 +167,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   width: 60px;
   height: 100%;
   top: 0;
-  filter: blur(30px);
+  filter: blur(60px);
   transform: translateX(-100px) skewX(-15deg);
 }
 #contact .contactForm .cta::after {
@@ -161,18 +178,19 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   width: 30px;
   height: 100%;
   top: 0;
-  filter: blur(5px);
+  filter: blur(25px);
   transform: translateX(-100px) skewX(-15deg);
 }
 #contact .contactForm .cta:hover {
   background-image: linear-gradient(to left, #2d8fe5, #d155b8);
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
   pointer-events: auto;
+  border: 1px solid #7c1768;
 }
 #contact .contactForm .cta:hover::before, #contact .contactForm .cta:hover::after {
   transform: translateX(300px) skewX(-15deg);
-  transition: 0.7s;
+  transition: 0.5s;
 }
 
 /* Type */
@@ -495,9 +513,6 @@ hr {
   }
   .row.gtr-uniform > * > :last-child {
     margin-bottom: 0;
-  }
-  .row > .col-1-small {
-    width: 8.3333333333%;
   }
   .row > .col-4-small {
     width: 33.3333333333%;
@@ -1054,6 +1069,7 @@ input[type=radio]:focus + label:before {
 }
 .sigilPositioner {
   position: relative;
+  z-index: 100;
   opacity: 40%;
 }
 .sigilPositioner #sigil, .sigilPositioner #sigil2 {
@@ -1065,6 +1081,13 @@ input[type=radio]:focus + label:before {
   animation: rotation 500s infinite;
   z-index: 15;
 }
+@media screen and (max-width: 980px) {
+  .sigilPositioner #sigil, .sigilPositioner #sigil2 {
+    left: -10vw;
+    top: 0;
+    max-width: 30vw;
+  }
+}
 .sigilPositioner #sigil2 {
   top: 10px;
   left: 2.5vw;
@@ -1072,6 +1095,12 @@ input[type=radio]:focus + label:before {
   animation: rotation 500s infinite;
   filter: blur(4px);
   z-index: 8;
+}
+@media screen and (max-width: 980px) {
+  .sigilPositioner #sigil2 {
+    left: -9.5vw;
+    top: 0;
+  }
 }
 
 .serviceIntro {
@@ -1087,6 +1116,10 @@ input[type=radio]:focus + label:before {
   width: 30%;
   position: relative;
   top: -3em !important;
+}
+.serviceIcon.ideation {
+  margin-bottom: -2em;
+  transform: rotate(-1deg);
 }
 .serviceIcon.dataScience {
   margin-bottom: -2em;
@@ -1138,36 +1171,6 @@ ul.serviceList li:first-child {
   list-style-type: none;
   margin-left: -1.6em;
   padding-bottom: 0.5em;
-}
-ul.serviceCards {
-  list-style-type: none;
-  text-align: center;
-}
-ul.serviceCards li {
-  display: inline;
-  margin: auto -16px;
-  position: relative;
-}
-ul.serviceCards li img {
-  width: 18%;
-}
-ul.serviceCards li.ideation {
-  position: relative;
-  z-index: 10;
-  top: -5px;
-  left: -25px;
-}
-ul.serviceCards li.ideation img {
-  transform: rotate(-4deg);
-}
-ul.serviceCards li.datasciences img {
-  transform: rotate(2deg);
-}
-ul.serviceCards li.infoarts {
-  margin-left: 0;
-}
-ul.serviceCards li.infoarts img {
-  transform: rotate(12deg);
 }
 ul.alt {
   list-style: none;
@@ -1351,6 +1354,18 @@ section#prophecy .citation {
   padding-bottom: 4em;
   color: #fff;
   font-size: 13px;
+}
+@media screen and (max-width: 980px) {
+  section#prophecy img {
+    position: relative;
+    left: -20%;
+    width: 150%;
+    margin-top: -10px;
+    margin-bottom: 0;
+  }
+  section#prophecy .citation {
+    margin-top: 8px;
+  }
 }
 
 header.major {
@@ -1537,88 +1552,6 @@ table.alt tbody tr td {
 /* Statistics */
 
 /* Spotlight */
-.spotlight {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  margin: 0 0 2em 0;
-}
-.spotlight .content {
-  -moz-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-.spotlight .content > :last-child {
-  margin-bottom: 0;
-}
-.spotlight .content header.major {
-  margin: 0 0 2em 0;
-}
-.spotlight .image {
-  display: inline-block;
-  margin-left: 4em;
-  padding: 0.65em;
-  border-radius: 100%;
-  border: solid 1px;
-}
-.spotlight .image img {
-  display: block;
-  border-radius: 100%;
-  width: 16em;
-}
-@media screen and (max-width: 980px) {
-  .spotlight {
-    -moz-flex-direction: column-reverse;
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .spotlight .content {
-    -moz-flex: 0 1 auto;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    width: 100%;
-  }
-  .spotlight .content header.major h2:after {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .spotlight .content .actions {
-    -moz-justify-content: center;
-    -webkit-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    width: calc(100% + 1em);
-  }
-  .spotlight .image {
-    -moz-flex: 0 1 auto;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    margin-left: 0;
-    margin-bottom: 2em;
-  }
-}
-@media screen and (max-width: 736px) {
-  .spotlight .image {
-    padding: 0.35em;
-  }
-  .spotlight .image img {
-    width: 12em;
-  }
-}
-
-.spotlight .image {
-  border-color: rgba(255, 255, 255, 0.35);
-}
 /* Header */
 #header {
   padding: 5em 5em 1em 5em;
@@ -2084,9 +2017,6 @@ body.is-preload #header.alt .logo {
 #main table.alt tbody tr td {
   border-color: #dddddd;
 }
-#main .spotlight .image {
-  border-color: #dddddd;
-}
 #main > .main {
   padding: 3em 3em 1em 3em;
   border-top: solid 1px #dddddd;
@@ -2176,7 +2106,6 @@ body.is-preload #header.alt .logo {
   max-width: 100%;
   margin: 0 0 3em 0;
   margin-bottom: 0;
-  background-color: #080c2d;
 }
 #footer > * {
   width: calc(50% - 2em);
@@ -2241,6 +2170,10 @@ dl.icons dd:first-child {
   padding-top: 24px;
   margin-bottom: 0;
   border-top: 1px dotted rgba(255, 255, 255, 0.25);
+}
+
+#footer.textured {
+  background-image: url("../../images/bg_texture-opt.png");
 }
 
 /* Wrapper */

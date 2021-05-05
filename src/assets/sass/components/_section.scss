@@ -17,6 +17,18 @@ section, article {
       color: #fff;
       font-size: 13px;
     }
+    @include breakpoint('<=medium') {
+      img {
+        position: relative;
+        left: -20%;
+        width: 150%;
+        margin-top: -10px;
+        margin-bottom: 0;
+      }
+      .citation {
+        margin-top: 8px;
+      }
+    }
   }
 }
 

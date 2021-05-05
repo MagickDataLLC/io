@@ -70,9 +70,9 @@
     opacity: 40%;
     #sigil, #sigil2 {
       position: absolute;
-      top: 10px;
-      left: 3vw;
-      max-width: 25vw;
+      top: 23vh;
+      left: 0;
+      max-width: 30vw;
       transform: rotate(-16deg);
       animation: rotation 500s infinite;
       z-index: 15;
@@ -84,8 +84,8 @@
 
     }
     #sigil2 {
-      top: 10px;
-      left: 2.5vw;
+      top: 23vh;
+      left: 0.5vw;
       transform: rotate(-13deg);
       animation: rotation 500s infinite;
       filter: blur(4px);
@@ -114,12 +114,17 @@
       transform: rotate(-1deg);
     }
     &.dataScience {
-      margin-bottom: -2em;
-      transform: rotate(-1deg);
+      margin-bottom: -1em;
+      transform: rotate(-3deg);
     }
     &.infoArts {
-      margin-bottom: -2em;
-      transform: rotate(4deg);
+      margin-bottom: 0em;
+      transform: rotate(-2deg);
+    }
+    @include breakpoint('<=medium') {
+      &.dataScience, &.ideation, &.infoArts {
+        margin-bottom: -2.75em;
+      }
     }
   }
   h2.service {

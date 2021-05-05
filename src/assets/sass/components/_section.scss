@@ -92,6 +92,13 @@ footer {
   }
 }
 
+.includeSeparator {
+  @include breakpoint('<=medium') {
+    border-top: 1px dotted rgba(0,0,0,0.15);
+    padding-top: 24px;
+  }
+}
+
 @include breakpoint('<=small') {
   header {
     &.major {

@@ -45,7 +45,8 @@
 		}
 
 		@include breakpoint('<=small') {
-			@include padding(3em, 2em);
+			padding: 3em 2em 0 2em;
+      margin-bottom: 0;
 		}
 
 		@include breakpoint('<=xsmall') {
@@ -82,5 +83,15 @@
 #footer {
   &.textured {
     background-image: url('../../images/bg_texture-opt.png');
+  }
+}
+
+.colophon {
+  @include breakpoint('<=small') {
+    margin-bottom: 0 !important;
+    .icons {
+      text-align: center;
+      margin-left: 10px;
+    }
   }
 }

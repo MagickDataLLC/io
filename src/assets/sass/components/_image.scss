@@ -147,16 +147,23 @@
     height: 400px;
     border-radius: 8px 0 0 8px;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+    border: 1px solid rgba(0,0,0,0.35);
+
+    @include breakpoint('large') {
+      right: -4em;
+    }
 
     @include breakpoint('<=medium') {
       right: -3em !important;
       height: 300px;
-      border: 1px solid rgba(0,0,0,0.35);
     }
     @include breakpoint('<=small') {
       right: -2em !important;
       height: 200px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+    }
+    @include breakpoint('<=xsmall') {
+      right: -1.5em !important;
+
     }
 
   }
@@ -170,7 +177,6 @@
     @include breakpoint('<=medium') {
       left: -1em;
       height: 200px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
     }
 
   }
@@ -180,19 +186,23 @@
     height: 400px;
     border-radius: 8px 0 0 8px;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+    @include breakpoint('large') {
+      right: -4em;
+    }
     @include breakpoint('<=medium') {
       right: -1em;
       height: 300px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
     }
     @include breakpoint('<=medium') {
       right: -3em !important;
       height: 300px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
     }
     @include breakpoint('<=small') {
       right: -2em !important;
       height: 200px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+      width: 100% !important;
+    }
+    @include breakpoint('<=xsmall') {
+      right: -1.5em !important;
     }
   }

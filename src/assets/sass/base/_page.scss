@@ -88,6 +88,9 @@
         padding-bottom: 0;
         vertical-align: center;
       }
+      @include breakpoint('<=small'){
+        margin-left: 1em;
+      }
       h4 {
         font-size: 2rem;
         font-weight: 700;

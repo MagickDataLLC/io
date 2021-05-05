@@ -147,6 +147,11 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     vertical-align: center;
   }
 }
+@media screen and (max-width: 736px) {
+  #contact .contactForm .cta {
+    margin-left: 1em;
+  }
+}
 #contact .contactForm .cta h4 {
   font-size: 2rem;
   font-weight: 700;
@@ -1149,19 +1154,28 @@ img.demoDashboard {
   height: 400px;
   border-radius: 8px 0 0 8px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+  img.demoDashboard {
+    right: -4em;
+  }
 }
 @media screen and (max-width: 980px) {
   img.demoDashboard {
     right: -3em !important;
     height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.35);
   }
 }
 @media screen and (max-width: 736px) {
   img.demoDashboard {
     right: -2em !important;
     height: 200px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+  }
+}
+@media screen and (max-width: 480px) {
+  img.demoDashboard {
+    right: -1.5em !important;
   }
 }
 
@@ -1175,7 +1189,6 @@ img.demoFlow {
   img.demoFlow {
     left: -1em;
     height: 200px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -1185,25 +1198,33 @@ img.demoTable {
   border-radius: 8px 0 0 8px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
 }
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+  img.demoTable {
+    right: -4em;
+  }
+}
 @media screen and (max-width: 980px) {
   img.demoTable {
     right: -1em;
     height: 300px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
   }
 }
 @media screen and (max-width: 980px) {
   img.demoTable {
     right: -3em !important;
     height: 300px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
   }
 }
 @media screen and (max-width: 736px) {
   img.demoTable {
     right: -2em !important;
     height: 200px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  img.demoTable {
+    right: -1.5em !important;
   }
 }
 
@@ -2285,11 +2306,17 @@ dl.icons dd:first-child {
 }
 @media screen and (max-width: 480px) {
   #wrapper {
-    max-width: calc(100% - 2em);
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
   }
 }
 @media screen and (max-width: 360px) {
   #wrapper {
     max-width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
   }
 }

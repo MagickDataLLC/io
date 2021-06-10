@@ -1663,6 +1663,39 @@ table.alt tbody tr td {
 /* Statistics */
 
 /* Spotlight */
+
+@keyframes wheelHueColor {
+  from, to {
+    color: #c32283;
+  }
+  10% {
+    color: #bd2828;
+  }
+  20% {
+    color: #cf8517;
+  }
+  30% {
+    color: #819c16;
+  }
+  40% {
+    color: #36931f;
+  }
+  50% {
+    color: #169c4c;
+  }
+  60% {
+    color: #169c9c;
+  }
+  70% {
+    color: #2e65b8;
+  }
+  80% {
+    color: #4e2dd2;
+  }
+  90% {
+    color: #8b29a3;
+  }
+}
 /* Header */
 #header {
   padding: 5em 5em 1em 5em;
